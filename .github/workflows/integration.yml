@@ -3,5 +3,12 @@ name: integration
 on: push
 
 jobs:
-  - npx eslint
+  checkCodestyle:
+    runs-on: ubuntu-latest
+    steps:
+        run: |
+          npm install
+          npx eslint .
+        env:
+          integration: true
 
