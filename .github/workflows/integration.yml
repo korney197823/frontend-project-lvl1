@@ -1,6 +1,7 @@
-name: Node.js CI
+name: Node CI
 
-on: [push]
+on:
+  - push
 
 jobs:
   build:
@@ -12,12 +13,16 @@ jobs:
         node-version: [13.x]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v1
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npx eslint .
+      - name: npm install
+        run: |
+          make install
         env:
           CI: true
-
+      - name: Run linter
+        run: |
+          make lint
