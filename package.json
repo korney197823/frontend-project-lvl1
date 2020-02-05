@@ -1,0 +1,23 @@
+{
+  "name": "brain-games",
+  "version": "0.0.1",
+  "description": "first project hexlet",
+  "main": "src/index.js",
+  "type": "module",
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/korney197823/frontend-project-lvl1.git"
+  },
+  "author": "Denis Kornienko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/korney197823/frontend-project-lvl1/issues"
+  },
+  "homepage": "https://github.com/korney197823/frontend-project-lvl1#readme"
+}
