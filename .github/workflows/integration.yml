@@ -1,7 +1,7 @@
-language: node_js
+name: integration
 
-node_js:
-  - "13"
-script:
-  - npx eslint .
+on: push
+
+jobs:
+  - npx eslint
 
