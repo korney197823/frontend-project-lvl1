@@ -1,14 +1,22 @@
 import readlineSync from 'readline-sync';
 
-function getRandomNumber() {
-  return Math.floor(Math.random() * 100);
+
+// Random number generation
+function getRandomNumber(n) {
+  return Math.floor(Math.random() * n);
 }
 
+function getRandomOperation() {
+  const operations = ['+', '-', '*'];
+  return operations[getRandomNumber(operations.length)];
+}
+
+// Check if the number is even
 function isEven(number) {
   return number % 2 === 0;
 }
 
-const welcome = {
+export const welcome = {
   title() {
     console.log('Welcome to the Brain Games!');
   },
@@ -21,13 +29,13 @@ const welcome = {
   },
 };
 
-const brainEven = () => {
+export const brainEven = () => {
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
   let countCorrectAnswers = 0;
 
   while (countCorrectAnswers < 3) {
-    const number = getRandomNumber();
+    const number = getRandomNumber(100);
 
     console.log('Question: ', number);
 
@@ -46,4 +54,13 @@ const brainEven = () => {
   }
 };
 
-export { welcome, brainEven };
+export const calc = () => {
+  const operation = getRandomOperation();
+  const numberOne = getRandomNumber(100);
+  const numberTwo = getRandomNumber(100);
+
+
+
+
+
+};
