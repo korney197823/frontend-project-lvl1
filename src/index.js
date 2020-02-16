@@ -64,8 +64,6 @@ export const calc = () => {
     const numberOne = getRandomNumber(100);
     const numberTwo = getRandomNumber(100);
 
-    console.log(operation, numberOne, numberTwo);
-
     // eslint-disable-next-line no-unused-vars
     let question = '';
     // eslint-disable-next-line no-unused-vars
