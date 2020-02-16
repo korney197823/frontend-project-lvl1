@@ -1,4 +1,6 @@
 #!/usr/bin/env node
-import { calc } from '../src/index.js';
+import { welcome, calc } from '../src/index.js';
 
+welcome.title();
+welcome.hello();
 calc();
