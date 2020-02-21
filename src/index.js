@@ -6,6 +6,7 @@ function getRandomNumber(n) {
   return Math.floor(Math.random() * n);
 }
 
+// Rundom operator generation
 function getRandomOperation() {
   const operations = ['+', '-', '*'];
   return operations[getRandomNumber(operations.length)];
@@ -15,6 +16,8 @@ function getRandomOperation() {
 function isEven(number) {
   return number % 2 === 0;
 }
+
+const numberOfAttempts = 3;
 
 export const welcome = {
   title() {
@@ -34,7 +37,7 @@ export const brainEven = () => {
 
   let countCorrectAnswers = 0;
 
-  while (countCorrectAnswers < 3) {
+  while (countCorrectAnswers < numberOfAttempts) {
     const number = getRandomNumber(100);
 
     console.log('Question: ', number);
@@ -49,7 +52,7 @@ export const brainEven = () => {
       break;
     }
   }
-  if (countCorrectAnswers === 3) {
+  if (countCorrectAnswers === numberOfAttempts) {
     console.log(`Congratulations, ${welcome.getName()}!`);
   }
 };
@@ -59,7 +62,7 @@ export const calc = () => {
 
   let countCorrectAnswers = 0;
 
-  while (countCorrectAnswers < 3) {
+  while (countCorrectAnswers < numberOfAttempts) {
     const operation = getRandomOperation();
     const numberOne = getRandomNumber(100);
     const numberTwo = getRandomNumber(100);
@@ -89,7 +92,41 @@ export const calc = () => {
       break;
     }
   }
-  if (countCorrectAnswers === 3) {
+  if (countCorrectAnswers === numberOfAttempts) {
+    console.log(`Congratulations, ${welcome.getName()}!`);
+  }
+};
+
+export const braingcd = () => {
+  console.log('Find the greatest common divisor of given numbers.');
+
+  let countCorrectAnswers = 0;
+
+  while (countCorrectAnswers < numberOfAttempts) {
+    const numberOne = getRandomNumber(100);
+    const numberTwo = getRandomNumber(100);
+
+    const nod = (x, y) => {
+      // eslint-disable-next-line no-param-reassign
+      while (y !== 0) y = x % (x = y);
+      return x;
+    };
+
+    // eslint-disable-next-line no-unused-vars
+    const correctAnswer = nod(numberOne, numberTwo);
+
+    console.log(`Question: ${numberOne} ${numberTwo}`);
+
+    const answer = Number(readlineSync.question('Your answer: '));
+    if (answer === correctAnswer) {
+      console.log('Correct!');
+      countCorrectAnswers += 1;
+    } else {
+      console.log(`"${answer}" is wrong answer ;(. Correct answer was "${correctAnswer}".\nLet's try again, ${welcome.getName()}!`);
+      break;
+    }
+  }
+  if (countCorrectAnswers === numberOfAttempts) {
     console.log(`Congratulations, ${welcome.getName()}!`);
   }
 };

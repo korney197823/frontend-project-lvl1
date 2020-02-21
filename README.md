@@ -4,3 +4,5 @@
 [![asciicast](https://asciinema.org/a/PCxO4hBkSNGJItS48r1pru7ON.svg)](https://asciinema.org/a/PCxO4hBkSNGJItS48r1pru7ON) 
 2. Start game "Calculator"
 [![asciicast](https://asciinema.org/a/qiRSRYGodrzjfyJXb6E4pAtxq.svg)](https://asciinema.org/a/qiRSRYGodrzjfyJXb6E4pAtxq)
+3. Start game "GCD"
+[![asciicast](https://asciinema.org/a/s2QEjWnuv7r6srCKQycz5qzWT.svg)](https://asciinema.org/a/s2QEjWnuv7r6srCKQycz5qzWT)
