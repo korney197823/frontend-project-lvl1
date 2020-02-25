@@ -8,3 +8,5 @@
 [![asciicast](https://asciinema.org/a/s2QEjWnuv7r6srCKQycz5qzWT.svg)](https://asciinema.org/a/s2QEjWnuv7r6srCKQycz5qzWT)
 4. Start game "Progression"
 [![asciicast](https://asciinema.org/a/xEUlyrRNHWQ587lBD6ACczTew.svg)](https://asciinema.org/a/xEUlyrRNHWQ587lBD6ACczTew)
+5. Start game "Is Prime"
+[![asciicast](https://asciinema.org/a/FwEO0kjM34xauYtfwoasKIy0B.svg)](https://asciinema.org/a/FwEO0kjM34xauYtfwoasKIy0B)
