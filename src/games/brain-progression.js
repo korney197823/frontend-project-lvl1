@@ -1,40 +1,31 @@
-import readlineSync from "readline-sync";
-import {welcome} from "../index";
+import readlineSync from 'readline-sync';
+import { getRandomNumber } from '../index.js';
 
+// eslint-disable-next-line import/prefer-default-export
 export const brainProgression = () => {
-    console.log('What number is missing in the progression?');
+  const progressionLength = 10;
 
-    let countCorrectAnswers = 0;
-    const progressionLength = 10;
+  let elementProgression = getRandomNumber(10);
+  const step = getRandomNumber(10);
+  const answerIndex = getRandomNumber(10);
 
-    while (countCorrectAnswers < numberOfAttempts) {
-        let elementProgression = getRandomNumber(10);
-        const step = getRandomNumber(10);
-        const answerIndex = getRandomNumber(10);
+  const progressions = [];
 
-        const progressions = [];
+  for (let i = 0; i < progressionLength; i += 1) {
+    progressions.push(elementProgression);
+    elementProgression += step;
+  }
 
-        for (let i = 0; i < progressionLength; i += 1) {
-            progressions.push(elementProgression);
-            elementProgression += step;
-        }
+  const correctAnswer = progressions[answerIndex];
+  progressions[answerIndex] = '..';
 
-        // eslint-disable-next-line no-unused-vars
-        const correctAnswer = progressions[answerIndex];
-        progressions[answerIndex] = '..';
+  console.log(`Question: ${progressions.join(' ')}`);
 
-        console.log(`Question: ${progressions.join(' ')}`);
-
-        const answer = Number(readlineSync.question('Your answer: '));
-        if (answer === correctAnswer) {
-            console.log('Correct!');
-            countCorrectAnswers += 1;
-        } else {
-            console.log(`"${answer}" is wrong answer ;(. Correct answer was "${correctAnswer}".\nLet's try again, ${welcome.getName()}!`);
-            break;
-        }
-    }
-    if (countCorrectAnswers === numberOfAttempts) {
-        console.log(`Congratulations, ${welcome.getName()}!`);
-    }
+  const answer = Number(readlineSync.question('Your answer: '));
+  if (answer === correctAnswer) {
+    console.log('Correct!');
+    return true;
+  }
+  console.log(`"${answer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
+  return false;
 };
