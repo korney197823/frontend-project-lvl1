@@ -3,6 +3,7 @@ import readlineSync from 'readline-sync';
 export const instructions = {
   isEven: "Answer 'yes' if the number is even, otherwise answer 'no'",
   calc: 'What is the result of the expression?',
+  gcd: 'Find the greatest common divisor of given numbers.',
 };
 
 // Random number generation
@@ -29,9 +30,8 @@ export const startGame = (gameFunction, instruction) => {
     }
     if (countSuccessAnswers === numberOfAttempts) {
       console.log(`Congratulations, ${userName}`);
-    }
-    else {
-      console.log(`Let's try again, ${userName}`)
+    } else {
+      console.log(`Let's try again, ${userName}`);
     }
   }
 };
