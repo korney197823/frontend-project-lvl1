@@ -30,5 +30,8 @@ export const startGame = (gameFunction, instruction) => {
     if (countSuccessAnswers === numberOfAttempts) {
       console.log(`Congratulations, ${userName}`);
     }
+    else {
+      console.log(`Let's try again, ${userName}`)
+    }
   }
 };

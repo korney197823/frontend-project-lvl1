@@ -1,47 +1,36 @@
 import readlineSync from 'readline-sync';
-import { getRandomNumber, welcome } from '../index';
+import { getRandomNumber } from '../index.js';
 
 const getRandomOperation = () => {
   const operations = ['+', '-', '*'];
   return operations[getRandomNumber(operations.length)];
 };
 
+// eslint-disable-next-line import/prefer-default-export
 export const calc = () => {
-  console.log('What is the result of the expression?');
+  const operation = getRandomOperation();
+  const numberOne = getRandomNumber(100);
+  const numberTwo = getRandomNumber(100);
 
-  let countCorrectAnswers = 0;
+  let question = '';
+  let correctAnswer = 0;
 
-  while (countCorrectAnswers < numberOfAttempts) {
-    const operation = getRandomOperation();
-    const numberOne = getRandomNumber(100);
-    const numberTwo = getRandomNumber(100);
-
-    // eslint-disable-next-line no-unused-vars
-    let question = '';
-    // eslint-disable-next-line no-unused-vars
-    let correctAnswer = 0;
-
-    if (operation === '+') {
-      question = `${numberOne} + ${numberTwo}`;
-      correctAnswer = numberOne + numberTwo;
-    } else if (operation === '*') {
-      question = `${numberOne} * ${numberTwo}`;
-      correctAnswer = numberOne * numberTwo;
-    } else if (operation === '-') {
-      question = `${numberOne} - ${numberTwo}`;
-      correctAnswer = numberOne - numberTwo;
-    }
-    console.log('Question: ', question);
-    const answer = Number(readlineSync.question('Your answer: '));
-    if (answer === correctAnswer) {
-      console.log('Correct!');
-      countCorrectAnswers += 1;
-    } else {
-      console.log(`"${answer}" is wrong answer ;(. Correct answer was "${correctAnswer}".\nLet's try again, ${welcome.getName()}!`);
-      break;
-    }
+  if (operation === '+') {
+    question = `${numberOne} + ${numberTwo}`;
+    correctAnswer = numberOne + numberTwo;
+  } else if (operation === '*') {
+    question = `${numberOne} * ${numberTwo}`;
+    correctAnswer = numberOne * numberTwo;
+  } else if (operation === '-') {
+    question = `${numberOne} - ${numberTwo}`;
+    correctAnswer = numberOne - numberTwo;
   }
-  if (countCorrectAnswers === numberOfAttempts) {
-    console.log(`Congratulations, ${welcome.getName()}!`);
+  console.log('Question: ', question);
+  const answer = Number(readlineSync.question('Your answer: '));
+  if (answer === correctAnswer) {
+    console.log('Correct!');
+    return true;
   }
+  console.log(`"${answer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
+  return false;
 };
