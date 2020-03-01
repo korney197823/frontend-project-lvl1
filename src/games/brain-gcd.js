@@ -3,7 +3,7 @@ import { getRandomNumber } from '../index.js';
 
 // eslint-disable-next-line import/prefer-default-export
 export const braingcd = () => {
-  const description = 'Find the greatest common divisor of given numbers.'
+  const description = 'Find the greatest common divisor of given numbers.';
   const numberOne = getRandomNumber(100);
   const numberTwo = getRandomNumber(100);
 

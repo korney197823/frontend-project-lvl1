@@ -12,7 +12,6 @@ export const startGame = (gameFunction) => {
   console.log(`Hello, ${userName}`);
 
   if (gameFunction !== undefined) {
-
     while (countSuccessAnswers < numberOfAttempts) {
       let result = false;
       result = gameFunction();
