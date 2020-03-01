@@ -8,6 +8,7 @@ const getRandomOperation = () => {
 
 // eslint-disable-next-line import/prefer-default-export
 export const calc = () => {
+  const description = 'What is the result of the expression?';
   const operation = getRandomOperation();
   const numberOne = getRandomNumber(100);
   const numberTwo = getRandomNumber(100);
@@ -25,6 +26,7 @@ export const calc = () => {
     question = `${numberOne} - ${numberTwo}`;
     correctAnswer = numberOne - numberTwo;
   }
+  console.log(description);
   console.log('Question: ', question);
   const answer = Number(readlineSync.question('Your answer: '));
   if (answer === correctAnswer) {

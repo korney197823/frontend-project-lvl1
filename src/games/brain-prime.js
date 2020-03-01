@@ -3,6 +3,7 @@ import { getRandomNumber } from '../index.js';
 
 // eslint-disable-next-line import/prefer-default-export
 export const brainPraim = () => {
+  const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
   let correctAnswer = '';
   const number = getRandomNumber(100);
 
@@ -19,7 +20,7 @@ export const brainPraim = () => {
   } else {
     correctAnswer = 'no';
   }
-
+  console.log(description);
   console.log('Question: ', number);
   const answer = readlineSync.question('Your answer: ');
   if (answer === correctAnswer) {

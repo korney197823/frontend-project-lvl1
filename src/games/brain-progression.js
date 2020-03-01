@@ -3,6 +3,7 @@ import { getRandomNumber } from '../index.js';
 
 // eslint-disable-next-line import/prefer-default-export
 export const brainProgression = () => {
+  const description = 'What number is missing in the progression?';
   const progressionLength = 10;
 
   let elementProgression = getRandomNumber(10);
@@ -19,6 +20,7 @@ export const brainProgression = () => {
   const correctAnswer = progressions[answerIndex];
   progressions[answerIndex] = '..';
 
+  console.log(description);
   console.log(`Question: ${progressions.join(' ')}`);
 
   const answer = Number(readlineSync.question('Your answer: '));
