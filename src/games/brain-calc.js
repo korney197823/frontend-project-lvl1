@@ -6,8 +6,7 @@ const getRandomOperation = () => {
   return operations[getRandomNumber(operations.length)];
 };
 
-// eslint-disable-next-line import/prefer-default-export
-export const calc = () => {
+const calc = () => {
   const description = 'What is the result of the expression?';
   const operation = getRandomOperation();
   const numberOne = getRandomNumber(100);
@@ -36,3 +35,5 @@ export const calc = () => {
   console.log(`"${answer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
   return false;
 };
+
+export default calc;

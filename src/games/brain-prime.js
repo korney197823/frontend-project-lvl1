@@ -1,8 +1,7 @@
 import readlineSync from 'readline-sync';
 import { getRandomNumber } from '../index.js';
 
-// eslint-disable-next-line import/prefer-default-export
-export const brainPraim = () => {
+const brainPraim = () => {
   const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
   let correctAnswer = '';
   const number = getRandomNumber(100);
@@ -30,3 +29,5 @@ export const brainPraim = () => {
   console.log(`"${answer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
   return false;
 };
+
+export default brainPraim;

@@ -5,8 +5,7 @@ import { getRandomNumber } from '../index.js';
 // Check if the number is even
 const isEven = (number) => number % 2 === 0;
 
-// eslint-disable-next-line import/prefer-default-export
-export const brainEven = () => {
+const brainEven = () => {
   const description = "Answer 'yes' if the number is even, otherwise answer 'no'";
   const number = getRandomNumber(100);
 
@@ -23,3 +22,5 @@ export const brainEven = () => {
   console.log(`${answer} is wrong answer ;(. Correct answer was ${correctAnswer}`);
   return false;
 };
+
+export default brainEven;

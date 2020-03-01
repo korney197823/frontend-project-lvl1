@@ -1,8 +1,7 @@
 import readlineSync from 'readline-sync';
 import { getRandomNumber } from '../index.js';
 
-// eslint-disable-next-line import/prefer-default-export
-export const brainProgression = () => {
+const brainProgression = () => {
   const description = 'What number is missing in the progression?';
   const progressionLength = 10;
 
@@ -31,3 +30,5 @@ export const brainProgression = () => {
   console.log(`"${answer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
   return false;
 };
+
+export default brainProgression;
