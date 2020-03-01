@@ -2,7 +2,7 @@ install:
 	npm install
 
 start:
-	npx node bin/brain-prime.js
+	npx node bin/brain-even.js
 
 publish:
 	npm publish --dry-run

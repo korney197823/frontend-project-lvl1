@@ -9,12 +9,9 @@ const isEven = (number) => number % 2 === 0;
 export const brainEven = () => {
   const description = "Answer 'yes' if the number is even, otherwise answer 'no'";
   const number = getRandomNumber(100);
-  let correctAnswer = '';
-  if (isEven(number)) {
-    correctAnswer = 'yes';
-  } else {
-    correctAnswer = 'no';
-  }
+
+  const correctAnswer = isEven(number) ? 'yes' : 'no';
+
   console.log(description);
   console.log('Question: ', number);
   const answer = readlineSync.question('Your answer: ');
