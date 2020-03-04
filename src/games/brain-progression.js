@@ -1,8 +1,8 @@
-import readlineSync from 'readline-sync';
-import { getRandomNumber } from '../index.js';
+import { startGame, getRandomNumber } from '../index.js';
+
+const description = 'What number is missing in the progression?';
 
 const brainProgression = () => {
-  const description = 'What number is missing in the progression?';
   const progressionLength = 10;
 
   let elementProgression = getRandomNumber(10);
@@ -16,19 +16,15 @@ const brainProgression = () => {
     elementProgression += step;
   }
 
-  const correctAnswer = progressions[answerIndex];
+  const correctAnswer = String(progressions[answerIndex]);
   progressions[answerIndex] = '..';
 
-  console.log(description);
-  console.log(`Question: ${progressions.join(' ')}`);
+  const question = `${progressions.join(' ')}`;
 
-  const answer = Number(readlineSync.question('Your answer: '));
-  if (answer === correctAnswer) {
-    console.log('Correct!');
-    return true;
-  }
-  console.log(`"${answer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
-  return false;
+  return {
+    question,
+    correctAnswer,
+  };
 };
 
-export default brainProgression;
+export default () => startGame(description, brainProgression);

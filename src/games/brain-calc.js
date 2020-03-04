@@ -1,13 +1,13 @@
-import readlineSync from 'readline-sync';
-import { getRandomNumber } from '../index.js';
+import { startGame, getRandomNumber } from '../index.js';
 
 const getRandomOperation = () => {
   const operations = ['+', '-', '*'];
   return operations[getRandomNumber(operations.length)];
 };
 
+const description = 'What is the result of the expression?';
+
 const calc = () => {
-  const description = 'What is the result of the expression?';
   const operation = getRandomOperation();
   const numberOne = getRandomNumber(100);
   const numberTwo = getRandomNumber(100);
@@ -28,20 +28,15 @@ const calc = () => {
       default:
         return result;
     }
-    return result;
+    return String(result);
   }
 
   const correctAnswer = computedResult(numberOne, numberTwo, operation);
 
-  console.log(description);
-  console.log('Question: ', question);
-  const answer = Number(readlineSync.question('Your answer: '));
-  if (answer === correctAnswer) {
-    console.log('Correct!');
-    return true;
-  }
-  console.log(`"${answer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
-  return false;
+  return {
+    question,
+    correctAnswer,
+  };
 };
 
-export default calc;
+export default () => startGame(description, calc);

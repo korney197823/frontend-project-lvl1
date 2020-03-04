@@ -1,33 +1,34 @@
-import readlineSync from 'readline-sync';
-import { getRandomNumber } from '../index.js';
+import { startGame, getRandomNumber } from '../index.js';
+
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const brainPraim = () => {
-  const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
   let correctAnswer = '';
-  const number = getRandomNumber(100);
+  const question = getRandomNumber(100);
 
   // eslint-disable-next-line consistent-return
   const isPrime = (num) => {
-    for (let i = 2; i < num; i += 1) {
-      if (num % i === 0) return false;
-      return num > 1;
+    if (num < 2) {
+      return false;
     }
+    for (let i = 2; i <= (num / 2); i += 1) {
+      if (num % i === 0) {
+        return false;
+      }
+    }
+    return true;
   };
 
-  if (isPrime(number)) {
+  if (isPrime(question)) {
     correctAnswer = 'yes';
   } else {
     correctAnswer = 'no';
   }
-  console.log(description);
-  console.log('Question: ', number);
-  const answer = readlineSync.question('Your answer: ');
-  if (answer === correctAnswer) {
-    console.log('Correct!');
-    return true;
-  }
-  console.log(`"${answer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
-  return false;
+
+  return {
+    question,
+    correctAnswer,
+  };
 };
 
-export default brainPraim;
+export default () => startGame(description, brainPraim);
