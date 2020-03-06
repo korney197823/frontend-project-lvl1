@@ -19,11 +19,7 @@ const brainPraim = () => {
     return true;
   };
 
-  if (isPrime(question)) {
-    correctAnswer = 'yes';
-  } else {
-    correctAnswer = 'no';
-  }
+  correctAnswer = isPrime(question) ? 'yes' : 'no';
 
   return {
     question,

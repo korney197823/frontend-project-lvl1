@@ -6,14 +6,14 @@ const braingcd = () => {
   const numberTwo = getRandomNumber(100);
   const question = `${numberOne} ${numberTwo}`;
 
-  const nod = (x, y) => {
+  const findGreatestCommonDivisor = (x, y) => {
     let numOne = x;
     let numTwo = y;
     while (numTwo !== 0) numTwo = numOne % (numOne = numTwo);
-    return String(numOne);
+    return numOne;
   };
 
-  const correctAnswer = nod(numberOne, numberTwo);
+  const correctAnswer = String(findGreatestCommonDivisor(numberOne, numberTwo));
 
   return {
     question,

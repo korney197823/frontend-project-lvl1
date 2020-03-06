@@ -2,17 +2,17 @@ import readlineSync from 'readline-sync';
 
 // Random number generation
 export const getRandomNumber = (n) => Math.floor(Math.random() * n);
+const counter = 3;
 
 export const startGame = (description, gameOptions) => {
-  let countSuccessAnswers = 0;
-  const numberOfAttempts = 3;
+  let counterSuccessAnswer = 0;
 
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May i have your name?: ');
   console.log(`Hello, ${userName}`);
   console.log(description);
 
-  while (countSuccessAnswers < numberOfAttempts) {
+  while (counterSuccessAnswer < counter) {
     const { question, correctAnswer } = gameOptions();
 
     console.log(`Question: ${question}`);
@@ -21,16 +21,14 @@ export const startGame = (description, gameOptions) => {
 
     if (answer === correctAnswer) {
       console.log('Correct!');
-      countSuccessAnswers += 1;
+      counterSuccessAnswer += 1;
     } else {
       console.log(`${answer} is wrong answer ;(. Correct answer was ${correctAnswer}.`);
-      break;
+      console.log(`Let's try again, ${userName}`);
+      return;
     }
   }
-
-  if (countSuccessAnswers === numberOfAttempts) {
+  if (counterSuccessAnswer === counter) {
     console.log(`Congratulations, ${userName}!`);
-  } else {
-    console.log(`Let's try again, ${userName}`);
   }
 };
