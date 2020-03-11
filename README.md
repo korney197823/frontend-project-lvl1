@@ -1,5 +1,11 @@
+
+
 [![Maintainability](https://api.codeclimate.com/v1/badges/866e256647efaa51bca1/maintainability)](https://codeclimate.com/github/korney197823/frontend-project-lvl1/maintainability)
 ![](https://github.com/korney197823/frontend-project-lvl1/workflows/Node%20CI/badge.svg)
+
+Welcome to the Brain Games, my first JS project for Hexlet.io!
+Installation:
+[![asciicast](https://asciinema.org/a/NhViUt7StU1Y37hH1c65aeHpb.svg)](https://asciinema.org/a/NhViUt7StU1Y37hH1c65aeHpb)
 1. Start game "Even parity"
 [![asciicast](https://asciinema.org/a/PCxO4hBkSNGJItS48r1pru7ON.svg)](https://asciinema.org/a/PCxO4hBkSNGJItS48r1pru7ON) 
 2. Start game "Calculator"

@@ -31,10 +31,10 @@ const calc = () => {
   const numberTwo = getRandomNumber(100);
   const question = `${numberOne} ${operation} ${numberTwo}`;
 
-  const correctAnswer = String(calculate(numberOne, numberTwo, operation));
+  const answer = String(calculate(numberOne, numberTwo, operation));
   return {
     question,
-    correctAnswer,
+    answer,
   };
 };
 

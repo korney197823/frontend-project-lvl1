@@ -3,7 +3,7 @@ import { startGame, getRandomNumber } from '../index.js';
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const brainPraim = () => {
-  let correctAnswer = '';
+  let answer = '';
   const question = getRandomNumber(100);
 
   // eslint-disable-next-line consistent-return
@@ -19,11 +19,11 @@ const brainPraim = () => {
     return true;
   };
 
-  correctAnswer = isPrime(question) ? 'yes' : 'no';
+  answer = isPrime(question) ? 'yes' : 'no';
 
   return {
     question,
-    correctAnswer,
+    answer,
   };
 };
 

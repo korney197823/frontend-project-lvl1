@@ -13,22 +13,20 @@ export const startGame = (description, gameOptions) => {
   console.log(description);
 
   while (counterSuccessAnswer < counter) {
-    const { question, correctAnswer } = gameOptions();
+    const { question, answer: correctAnswer } = gameOptions();
 
     console.log(`Question: ${question}`);
 
     const answer = readlineSync.question('Your answer: ');
 
-    if (answer === correctAnswer) {
-      console.log('Correct!');
-      counterSuccessAnswer += 1;
-    } else {
+    if (answer !== correctAnswer) {
       console.log(`${answer} is wrong answer ;(. Correct answer was ${correctAnswer}.`);
       console.log(`Let's try again, ${userName}`);
       return;
     }
+
+    console.log('Correct!');
+    counterSuccessAnswer += 1;
   }
-  if (counterSuccessAnswer === counter) {
-    console.log(`Congratulations, ${userName}!`);
-  }
+  console.log(`Congratulations, ${userName}!`);
 };

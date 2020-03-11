@@ -2,7 +2,7 @@ install:
 	npm install
 
 start:
-	npx node bin/brain-prime.js
+	npx node bin/progression.js
 
 publish:
 	npm publish --dry-run
