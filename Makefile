@@ -2,7 +2,7 @@ install:
 	npm install
 
 start:
-	npx node bin/progression.js
+	npx node bin/even.js
 
 publish:
 	npm publish --dry-run

@@ -1,10 +1,11 @@
-import { startGame, getRandomNumber } from '../engines.js';
+import startGame from '../engines.js';
+import getRandomNumber from '../utils.js';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const brainPraim = () => {
   let answer = '';
-  const question = getRandomNumber(100);
+  const question = getRandomNumber(0, 100);
 
   // eslint-disable-next-line consistent-return
   const isPrime = (num) => {

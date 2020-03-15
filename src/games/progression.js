@@ -1,13 +1,14 @@
-import { startGame, getRandomNumber } from '../engines.js';
+import startGame from '../engines.js';
+import getRandomNumber from '../utils.js';
 
 const description = 'What number is missing in the progression?';
 
 const progression = () => {
   const progressionLength = 10;
 
-  let elementProgression = getRandomNumber(10);
-  const step = getRandomNumber(10);
-  const answerIndex = getRandomNumber(progressionLength - 1);
+  let elementProgression = getRandomNumber(0, 10);
+  const step = getRandomNumber(0, 10);
+  const answerIndex = getRandomNumber(0, progressionLength - 1);
 
   const progressions = [];
 

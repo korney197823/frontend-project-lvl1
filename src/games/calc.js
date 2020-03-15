@@ -1,8 +1,9 @@
-import { startGame, getRandomNumber } from '../engines.js';
+import startGame from '../engines.js';
+import getRandomNumber from '../utils.js';
 
 const getRandomOperation = () => {
   const operations = ['+', '-', '*'];
-  return operations[getRandomNumber(operations.length)];
+  return operations[getRandomNumber(0, operations.length)];
 };
 
 const calculate = (numOne, numTwo, operator) => {
@@ -27,8 +28,8 @@ const description = 'What is the result of the expression?';
 
 const calc = () => {
   const operation = getRandomOperation();
-  const numberOne = getRandomNumber(100);
-  const numberTwo = getRandomNumber(100);
+  const numberOne = getRandomNumber(0, 100);
+  const numberTwo = getRandomNumber(0, 100);
   const question = `${numberOne} ${operation} ${numberTwo}`;
 
   const answer = String(calculate(numberOne, numberTwo, operation));
