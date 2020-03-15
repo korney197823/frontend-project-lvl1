@@ -3,11 +3,10 @@ import getRandomNumber from '../utils.js';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const brainPraim = () => {
+const getPrimeQuestion = () => {
   let answer = '';
   const question = getRandomNumber(0, 100);
 
-  // eslint-disable-next-line consistent-return
   const isPrime = (num) => {
     if (num < 2) {
       return false;
@@ -28,4 +27,4 @@ const brainPraim = () => {
   };
 };
 
-export default () => startGame(description, brainPraim);
+export default () => startGame(description, getPrimeQuestion);
