@@ -20,7 +20,7 @@ const progression = () => {
   const answer = String(progressions[answerIndex]);
   progressions[answerIndex] = '..';
 
-  const question = `${progressions.join(' ')}`;
+  const question = String(progressions.join(' '));
 
   return {
     question,
