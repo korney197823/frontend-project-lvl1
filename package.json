@@ -1,8 +1,8 @@
 {
   "name": "korneydv-brain-games",
   "version": "0.0.1",
-  "description": "first project hexlet",
-  "main": "src/index.js",
+  "description": "Brain-games - several console mini games for brain training",
+  "main": "src/engines.js",
   "type": "module",
   "bin": {
     "brain-even": "bin/even.js",
