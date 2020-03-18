@@ -1,4 +1,4 @@
-import startGame from '../engines.js';
+import playGame from '../engines.js';
 import getRandomNumber from '../utils.js';
 
 // const getRandomOperation = () => {
@@ -40,4 +40,4 @@ const calc = () => {
   };
 };
 
-export default () => startGame(description, calc);
+export default () => playGame(description, calc);

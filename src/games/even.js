@@ -1,4 +1,4 @@
-import startGame from '../engines.js';
+import playGame from '../engines.js';
 import getRandomNumber from '../utils.js';
 
 const isEven = (number) => number % 2 === 0;
@@ -13,4 +13,4 @@ const even = () => {
   };
 };
 
-export default () => startGame(description, even);
+export default () => playGame(description, even);

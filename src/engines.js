@@ -1,18 +1,16 @@
 import readlineSync from 'readline-sync';
 
 // Random number generation
-const counter = 3;
+const roundsCount = 3;
 
-const startGame = (description, gameOptions) => {
-  let counterSuccessAnswer = 0;
-
+const playGame = (description, getGameData) => {
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May i have your name?: ');
   console.log(`Hello, ${userName}`);
   console.log(description);
 
-  while (counterSuccessAnswer < counter) {
-    const { question, answer: correctAnswer } = gameOptions();
+  for (let i = 0; i < roundsCount; i += 1) {
+    const { question, answer: correctAnswer } = getGameData();
 
     console.log(`Question: ${question}`);
 
@@ -23,11 +21,9 @@ const startGame = (description, gameOptions) => {
       console.log(`Let's try again, ${userName}`);
       return;
     }
-
     console.log('Correct!');
-    counterSuccessAnswer += 1;
   }
   console.log(`Congratulations, ${userName}!`);
 };
 
-export default startGame;
+export default playGame;
