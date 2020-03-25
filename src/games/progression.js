@@ -1,9 +1,9 @@
-import playGame from '../engines.js';
+import playGame from '../engine.js';
 import getRandomNumber from '../utils.js';
 
 const description = 'What number is missing in the progression?';
 
-const getProgression = () => {
+const getProgressionData = () => {
   const progressionLength = 10;
 
   const startElement = getRandomNumber(0, 10);
@@ -28,4 +28,4 @@ const getProgression = () => {
   };
 };
 
-export default () => playGame(description, getProgression);
+export default () => playGame(description, getProgressionData);

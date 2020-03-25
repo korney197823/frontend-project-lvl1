@@ -2,7 +2,7 @@
   "name": "korneydv-brain-games",
   "version": "0.0.1",
   "description": "Brain-games - several console mini games for brain training",
-  "main": "src/engines.js",
+  "main": "src/engine.js",
   "type": "module",
   "bin": {
     "brain-even": "bin/even.js",

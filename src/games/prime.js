@@ -1,4 +1,4 @@
-import playGame from '../engines.js';
+import playGame from '../engine.js';
 import getRandomNumber from '../utils.js';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
@@ -15,7 +15,7 @@ const isPrime = (num) => {
   return true;
 };
 
-const getPrimeQuestion = () => {
+const getPrimeData = () => {
   const question = getRandomNumber(0, 100);
 
   const answer = isPrime(question) ? 'yes' : 'no';
@@ -26,4 +26,4 @@ const getPrimeQuestion = () => {
   };
 };
 
-export default () => playGame(description, getPrimeQuestion);
+export default () => playGame(description, getPrimeData);

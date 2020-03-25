@@ -1,4 +1,4 @@
-import playGame from '../engines.js';
+import playGame from '../engine.js';
 import getRandomNumber from '../utils.js';
 
 const findGreatestCommonDivisor = (x, y) => {
@@ -10,7 +10,7 @@ const findGreatestCommonDivisor = (x, y) => {
 
 const description = 'Find the greatest common divisor of given numbers.';
 
-const gcd = () => {
+const getGcdData = () => {
   const numberOne = getRandomNumber(0, 100);
   const numberTwo = getRandomNumber(0, 100);
   const question = `${numberOne} ${numberTwo}`;
@@ -23,4 +23,4 @@ const gcd = () => {
   };
 };
 
-export default () => playGame(description, gcd);
+export default () => playGame(description, getGcdData);

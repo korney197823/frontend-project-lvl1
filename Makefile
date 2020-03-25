@@ -2,7 +2,7 @@ install:
 	npm install
 
 start:
-	node bin/progression.js
+	node bin/calc.js
 
 publish:
 	npm publish --dry-run

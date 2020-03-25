@@ -1,4 +1,4 @@
-import playGame from '../engines.js';
+import playGame from '../engine.js';
 import getRandomNumber from '../utils.js';
 
 const operations = ['+', '-', '*'];
@@ -23,7 +23,7 @@ const calculate = (numOne, numTwo, operator) => {
 
 const description = 'What is the result of the expression?';
 
-const calc = () => {
+const getCalcData = () => {
   const operation = operations[getRandomNumber(0, operations.length - 1)];
   const numberOne = getRandomNumber(0, 100);
   const numberTwo = getRandomNumber(0, 100);
@@ -36,4 +36,4 @@ const calc = () => {
   };
 };
 
-export default () => playGame(description, calc);
+export default () => playGame(description, getCalcData);
